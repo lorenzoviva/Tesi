@@ -1,0 +1,6 @@
+python
+deps
+.data
+.ipynb_checkpoints/
+__pycache__/
+_private_*
