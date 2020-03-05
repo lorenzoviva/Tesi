@@ -1,0 +1,290 @@
+/home/lollouno/miniconda3/envs/python36env/bin/python /home/lollouno/.IntelliJIdea2018.3/config/plugins/python/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 45997 --file /home/lollouno/Documents/RNAS/rnn/ptb_task.py -optim rmsprop -cuda 0 -mem_slot 6 -summarize_freq 100 -epochs 1 -visdom -data ../data/penn/ -emsize 650 -dropout 0.5 -epochs 40
+pydev debugger: process 2061 is connecting
+
+Connected to pydev debugger (build 183.5429.30)
+WARNING:root:Setting up a new session...
+Namespace(alpha=2, batch_size=80, beta=1, bptt=70, check_freq=100, clip=50, cuda=0, curriculum_freq=1000, curriculum_increment=0, data='../data/penn/', debug=False, dropout=0.5, dropoute=0.1, dropouth=0.3, dropouti=0.65, emsize=650, epochs=40, input_size=6, lr=0.0001, mem_size=400, mem_slot=6, memory_type='dnc', nhid=64, nhlayer=2, nlayer=1, nr_cells=8, optim='rmsprop', read_heads=4, reset=False, rnn_type='lstm', sequence_max_length=4, sparse_reads=10, summarize_freq=100, temporal_reads=2, tied=True, visdom=True, wdrop=0.5)
+Using CUDA.
+
+----------------------------------------
+DNC(650, 64, rnn_type=rnn, dropout=0.5, nr_cells=6, read_heads=4, cell_size=400, gpu_id=0, debug=True)
+DNC(
+  (rnn_layer_0): RNN(2250, 64, num_layers=2, batch_first=True, dropout=0.5)
+  (rnn_layer_memory_shared): Memory(
+    (interface_weights): Linear(in_features=64, out_features=2823, bias=True)
+  )
+  (output): Linear(in_features=1664, out_features=650, bias=True)
+)
+----------------------------------------
+
+DNCModel(
+  (lockdrop): LockedDropout()
+  (idrop): Dropout(p=0.65)
+  (hdrop): Dropout(p=0.3)
+  (drop): Dropout(p=0.5)
+  (encoder): Embedding(10000, 650)
+  (child): 
+  ----------------------------------------
+  DNC(650, 64, rnn_type=rnn, dropout=0.5, nr_cells=6, read_heads=4, cell_size=400, gpu_id=0, debug=True)
+  DNC(
+    (rnn_layer_0): RNN(2250, 64, num_layers=2, batch_first=True, dropout=0.5)
+    (rnn_layer_memory_shared): Memory(
+      (interface_weights): Linear(in_features=64, out_features=2823, bias=True)
+    )
+    (output): Linear(in_features=1664, out_features=650, bias=True)
+  )
+  ----------------------------------------
+  
+  (decoder): Linear(in_features=650, out_features=10000, bias=True)
+)
+  0%|          | 0/464760 [00:00<?, ?it/s]
+
+i, batch, epoch: 69, 1, 0
+Perplexity: 7748.257299206664
+Avg. Logistic Loss: 9.296883583068848
+Compleated batch size: torch.Size([69, 80])
+On gpu: True
+:   0%|          | 0/464760 [00:17<?, ?it/s]
+
+i, batch, epoch: 69, 1, 0
+Perplexity: 7748.257299206664
+Avg. Logistic Loss: 9.296883583068848
+Compleated batch size: torch.Size([69, 80])
+On gpu: True
+:   0%|          | 69/464760 [00:17<33:34:47,  3.84it/s]
+
+i, batch, epoch: 133, 2, 0
+Perplexity: 5377.818616083123
+Avg. Logistic Loss: 8.988873481750488
+Compleated batch size: torch.Size([64, 80])
+On gpu: True
+:   0%|          | 69/464760 [00:35<33:34:47,  3.84it/s]
+
+i, batch, epoch: 133, 2, 0
+Perplexity: 5377.818616083123
+Avg. Logistic Loss: 8.988873481750488
+Compleated batch size: torch.Size([64, 80])
+On gpu: True
+:   0%|          | 133/464760 [00:35<34:03:26,  3.79it/s]
+
+i, batch, epoch: 206, 3, 0
+Perplexity: 3533.374801476633
+Avg. Logistic Loss: 8.78267765045166
+Compleated batch size: torch.Size([73, 80])
+On gpu: True
+:   0%|          | 133/464760 [00:52<34:03:26,  3.79it/s] 
+
+i, batch, epoch: 206, 3, 0
+Perplexity: 3533.374801476633
+Avg. Logistic Loss: 8.78267765045166
+Compleated batch size: torch.Size([73, 80])
+On gpu: True
+:   0%|          | 206/464760 [00:52<33:03:35,  3.90it/s]
+
+i, batch, epoch: 275, 4, 0
+Perplexity: 2879.031312005887
+Avg. Logistic Loss: 8.57969856262207
+Compleated batch size: torch.Size([69, 80])
+On gpu: True
+:   0%|          | 206/464760 [01:09<33:03:35,  3.90it/s]
+
+i, batch, epoch: 275, 4, 0
+Perplexity: 2879.031312005887
+Avg. Logistic Loss: 8.57969856262207
+Compleated batch size: torch.Size([69, 80])
+On gpu: True
+:   0%|          | 275/464760 [01:09<32:43:33,  3.94it/s]
+
+i, batch, epoch: 349, 5, 0
+Perplexity: 3140.84334276433
+Avg. Logistic Loss: 8.340388298034668
+Compleated batch size: torch.Size([74, 80])
+On gpu: True
+:   0%|          | 275/464760 [01:27<32:43:33,  3.94it/s]
+
+i, batch, epoch: 349, 5, 0
+Perplexity: 3140.84334276433
+Avg. Logistic Loss: 8.340388298034668
+Compleated batch size: torch.Size([74, 80])
+On gpu: True
+:   0%|          | 349/464760 [01:27<32:05:05,  4.02it/s]
+
+i, batch, epoch: 415, 6, 0
+Perplexity: 2704.430613469034
+Avg. Logistic Loss: 8.00391960144043
+Compleated batch size: torch.Size([66, 80])
+On gpu: True
+:   0%|          | 349/464760 [01:44<32:05:05,  4.02it/s]
+
+i, batch, epoch: 415, 6, 0
+Perplexity: 2704.430613469034
+Avg. Logistic Loss: 8.00391960144043
+Compleated batch size: torch.Size([66, 80])
+On gpu: True
+:   0%|          | 415/464760 [01:44<32:43:46,  3.94it/s]
+
+i, batch, epoch: 488, 7, 0
+Perplexity: 1459.8645242547993
+Avg. Logistic Loss: 7.751591205596924
+Compleated batch size: torch.Size([73, 80])
+On gpu: True
+:   0%|          | 415/464760 [02:02<32:43:46,  3.94it/s]
+
+i, batch, epoch: 488, 7, 0
+Perplexity: 1459.8645242547993
+Avg. Logistic Loss: 7.751591205596924
+Compleated batch size: torch.Size([73, 80])
+On gpu: True
+:   0%|          | 488/464760 [02:02<32:07:15,  4.01it/s]
+
+i, batch, epoch: 564, 8, 0
+Perplexity: 1184.974166867632
+Avg. Logistic Loss: 7.486038684844971
+Compleated batch size: torch.Size([76, 80])
+On gpu: True
+:   0%|          | 488/464760 [02:20<32:07:15,  4.01it/s] 
+
+i, batch, epoch: 564, 8, 0
+Perplexity: 1184.974166867632
+Avg. Logistic Loss: 7.486038684844971
+Compleated batch size: torch.Size([76, 80])
+On gpu: True
+:   0%|          | 564/464760 [02:20<31:32:49,  4.09it/s]
+
+i, batch, epoch: 630, 9, 0
+Perplexity: 1643.2475922257308
+Avg. Logistic Loss: 7.658323764801025
+Compleated batch size: torch.Size([66, 80])
+On gpu: True
+:   0%|          | 564/464760 [02:37<31:32:49,  4.09it/s]
+
+i, batch, epoch: 630, 9, 0
+Perplexity: 1643.2475922257308
+Avg. Logistic Loss: 7.658323764801025
+Compleated batch size: torch.Size([66, 80])
+On gpu: True
+:   0%|          | 630/464760 [02:37<32:15:12,  4.00it/s]
+
+i, batch, epoch: 703, 10, 0
+Perplexity: 3156.945852156032
+Avg. Logistic Loss: 7.271673679351807
+Compleated batch size: torch.Size([73, 80])
+On gpu: True
+:   0%|          | 630/464760 [03:05<32:15:12,  4.00it/s]
+
+i, batch, epoch: 703, 10, 0
+Perplexity: 3156.945852156032
+Avg. Logistic Loss: 7.271673679351807
+Compleated batch size: torch.Size([73, 80])
+On gpu: True
+:   0%|          | 703/464760 [03:05<37:25:10,  3.44it/s]
+
+i, batch, epoch: 762, 11, 0
+Perplexity: 2414.0533459882777
+Avg. Logistic Loss: 7.504486083984375
+Compleated batch size: torch.Size([59, 80])
+On gpu: True
+:   0%|          | 703/464760 [03:22<37:25:10,  3.44it/s]
+
+i, batch, epoch: 762, 11, 0
+Perplexity: 2414.0533459882777
+Avg. Logistic Loss: 7.504486083984375
+Compleated batch size: torch.Size([59, 80])
+On gpu: True
+:   0%|          | 762/464760 [03:22<37:15:13,  3.46it/s]
+
+i, batch, epoch: 834, 12, 0
+Perplexity: 1147.1789916523098
+Avg. Logistic Loss: 7.453396320343018
+Compleated batch size: torch.Size([72, 80])
+On gpu: True
+:   0%|          | 762/464760 [03:39<37:15:13,  3.46it/s]
+
+i, batch, epoch: 834, 12, 0
+Perplexity: 1147.1789916523098
+Avg. Logistic Loss: 7.453396320343018
+Compleated batch size: torch.Size([72, 80])
+On gpu: True
+:   0%|          | 834/464760 [03:39<35:24:11,  3.64it/s]
+
+i, batch, epoch: 905, 13, 0
+Perplexity: 996.2446807266572
+Avg. Logistic Loss: 7.023128509521484
+Compleated batch size: torch.Size([71, 80])
+On gpu: True
+:   0%|          | 834/464760 [03:57<35:24:11,  3.64it/s] 
+
+i, batch, epoch: 905, 13, 0
+Perplexity: 996.2446807266572
+Avg. Logistic Loss: 7.023128509521484
+Compleated batch size: torch.Size([71, 80])
+On gpu: True
+:   0%|          | 905/464760 [03:57<34:33:39,  3.73it/s]
+
+i, batch, epoch: 976, 14, 0
+Perplexity: 974.0318871813935
+Avg. Logistic Loss: 7.4031267166137695
+Compleated batch size: torch.Size([71, 80])
+On gpu: True
+:   0%|          | 905/464760 [04:15<34:33:39,  3.73it/s]
+
+i, batch, epoch: 976, 14, 0
+Perplexity: 974.0318871813935
+Avg. Logistic Loss: 7.4031267166137695
+Compleated batch size: torch.Size([71, 80])
+On gpu: True
+:   0%|          | 976/464760 [04:15<33:34:59,  3.84it/s]
+
+i, batch, epoch: 1035, 15, 0
+Perplexity: 1162.0830010355269
+Avg. Logistic Loss: 7.440053462982178
+Compleated batch size: torch.Size([59, 80])
+On gpu: True
+:   0%|          | 976/464760 [04:32<33:34:59,  3.84it/s]
+
+i, batch, epoch: 1035, 15, 0
+Perplexity: 1162.0830010355269
+Avg. Logistic Loss: 7.440053462982178
+Compleated batch size: torch.Size([59, 80])
+On gpu: True
+:   0%|          | 1035/464760 [04:32<35:14:19,  3.66it/s]
+
+i, batch, epoch: 1103, 16, 0
+Perplexity: 2118.453118277074
+Avg. Logistic Loss: 6.91950798034668
+Compleated batch size: torch.Size([68, 80])
+On gpu: True
+:   0%|          | 1035/464760 [04:50<35:14:19,  3.66it/s]  
+
+i, batch, epoch: 1103, 16, 0
+Perplexity: 2118.453118277074
+Avg. Logistic Loss: 6.91950798034668
+Compleated batch size: torch.Size([68, 80])
+On gpu: True
+:   0%|          | 1103/464760 [04:50<34:39:18,  3.72it/s]
+
+i, batch, epoch: 1178, 17, 0
+Perplexity: 2632.9817637199667
+Avg. Logistic Loss: 7.154262065887451
+Compleated batch size: torch.Size([75, 80])
+On gpu: True
+:   0%|          | 1103/464760 [05:07<34:39:18,  3.72it/s]
+
+i, batch, epoch: 1178, 17, 0
+Perplexity: 2632.9817637199667
+Avg. Logistic Loss: 7.154262065887451
+Compleated batch size: torch.Size([75, 80])
+On gpu: True
+:   0%|          | 1178/464760 [05:07<33:06:25,  3.89it/s]
+
+i, batch, epoch: 1214, 18, 0
+Perplexity: 2149.4107352207225
+Avg. Logistic Loss: 7.436429977416992
+Compleated batch size: torch.Size([36, 80])
+On gpu: True
+:   0%|          | 1178/464760 [05:24<33:06:25,  3.89it/s]
+
+i, batch, epoch: 1214, 18, 0
+Perplexity: 2149.4107352207225
+Avg. Logistic Loss: 7.436429977416992
+Compleated batch size: torch.Size([36, 80])

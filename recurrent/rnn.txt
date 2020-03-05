@@ -1,0 +1,33 @@
+DNCModel(
+  (lockdrop): LockedDropout()
+  (idrop): Dropout(p=0.65)
+  (hdrop): Dropout(p=0.3)
+  (drop): Dropout(p=0.5)
+  (encoder): Embedding(10000, 650)
+  (child):
+  ----------------------------------------
+  DNC(650, 64, num_layers=2, dropout=0.5, nr_cells=6, read_heads=4, cell_size=400, gpu_id=0, debug=True)
+  DNC(
+    (lstm_layer_0): LSTM(2250, 64, num_layers=2, batch_first=True, dropout=0.5)
+    (lstm_layer_1): LSTM(1664, 64, num_layers=2, batch_first=True, dropout=0.5)
+
+
+
+
+
+
+
+
+
+
+
+
+    (rnn_layer_memory_shared): Memory(
+      (interface_weights): Linear(in_features=64, out_features=2823, bias=True)
+    )
+    (output): Linear(in_features=1664, out_features=650, bias=True)
+  )
+  ----------------------------------------
+
+  (decoder): Linear(in_features=650, out_features=10000, bias=True)
+)
